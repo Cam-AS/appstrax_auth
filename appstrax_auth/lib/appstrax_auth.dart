@@ -46,21 +46,7 @@ class AuthService {
         'email': registerDto.email,
         'password': registerDto.password,
         'admin': false,
-        'data': {
-          'name': registerDto.data['name'],
-          'dress_icon': registerDto.data['dress_icon'],
-          'hat_icon': registerDto.data['hat_icon'],
-          'pants_icon': registerDto.data['pants_icon'],
-          'formal_shirt_icon': registerDto.data['formal_shirt_icon'],
-          'semi_casual_shirt_icon': registerDto.data['semi_casual_shirt_icon'],
-          'bikini_icon': registerDto.data['bikini_icon'],
-          'high_heel_icon': registerDto.data['high_heel_icon'],
-          'shoe_icon': registerDto.data['shoe_icon'],
-          'sunglasses_icon': registerDto.data['sunglasses_icon'],
-          'tshirt_icon': registerDto.data['tshirt_icon'],
-          'handbag_icon': registerDto.data['handbag_icon'],
-          'necklace_icon': registerDto.data['necklace_icon'],
-        },
+        'data': registerDto.data
       },
     );
 
