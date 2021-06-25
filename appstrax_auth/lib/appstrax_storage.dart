@@ -4,7 +4,7 @@ class StorageService {
   static final StorageService _instance = StorageService._internal();
 
   SharedPreferences? _prefs;
-  final String _token = 'SWOP_SWOP_token';
+  final String _token = 'user_token';
 
   factory StorageService() {
     return _instance;

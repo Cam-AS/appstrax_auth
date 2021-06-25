@@ -5,8 +5,6 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-import 'config.dart';
-
 import '../models/user.dart';
 import 'models/register-dto.dart';
 
@@ -41,9 +39,9 @@ class AuthService {
     StorageService().setAuthToken(token);
   }
 
-  Future<User> register(RegisterDto registerDto) async {
+  Future<User> register(RegisterDto registerDto, String authApiUrl) async {
     var token = await HttpService().post(
-      Config.authApiUrl + '/api/auth/register',
+      authApiUrl + '/api/auth/register',
       {
         'email': registerDto.email,
         'password': registerDto.password,
@@ -70,9 +68,9 @@ class AuthService {
     return _user!;
   }
 
-  Future<User> login(String email, String password) async {
+  Future<User> login(String email, String password, String authApiUrl) async {
     var token = await HttpService().post(
-      Config.authApiUrl + '/api/auth/login',
+      authApiUrl + '/api/auth/login',
       {'email': email, 'password': password},
     );
 
@@ -80,16 +78,16 @@ class AuthService {
     return _user!;
   }
 
-  Future<String> forgotPassword(String email) async {
+  Future<String> forgotPassword(String email, String authApiUrl) async {
     return await HttpService().post(
-      Config.authApiUrl + '/api/auth/forgot-password',
+      authApiUrl + '/api/auth/forgot-password',
       {'email': email},
     );
   }
 
-  Future<String> resetPassword(String email, String code, String password) async {
+  Future<String> resetPassword(String email, String code, String password, String authApiUrl) async {
     return await HttpService().post(
-      Config.authApiUrl + '/api/auth/reset-password',
+      authApiUrl + '/api/auth/reset-password',
       {'email': email, 'code': code, 'password': password},
     );
   }
