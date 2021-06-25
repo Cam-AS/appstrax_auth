@@ -91,13 +91,6 @@ class AuthService {
     return token;
   }
 
-  // updateProfilePic() async {
-  //   if (isAuthenticated()) {
-  //     User user = await _userService.fetchById('');
-  //     _onAuthStateChanged(user);
-  //   }
-  // }
-
   bool isAuthenticated() {
     return _user != null;
   }
