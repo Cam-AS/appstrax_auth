@@ -40,7 +40,7 @@ class StorageService {
   }
 
   getString(String key) {
-    _prefs!.getString(key);
+    return _prefs!.getString(key);
   }
 
   clearAuthToken() {
