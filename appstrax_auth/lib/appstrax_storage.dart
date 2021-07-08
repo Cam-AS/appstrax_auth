@@ -35,6 +35,14 @@ class StorageService {
     }
   }
 
+  setString(String key, String value) {
+    _prefs!.setString(key, value);
+  }
+
+  getString(String key, String value) {
+    _prefs!.getString(key);
+  }
+
   clearAuthToken() {
     _validateInit();
     _prefs!.remove(this._token);
