@@ -39,7 +39,7 @@ class StorageService {
     _prefs!.setString(key, value);
   }
 
-  getString(String key, String value) {
+  getString(String key) {
     _prefs!.getString(key);
   }
 
